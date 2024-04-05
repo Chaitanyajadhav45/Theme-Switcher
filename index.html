@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 27</title>
+    <style>
+        .container {
+            margin: 10px 0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .theme-icon {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .active {
+            border: 1px solid black;
+        }
+
+        .theme-dark {
+            background-color: black;
+            color: white;
+        }
+
+        .theme-light {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div class="container">
+        <img src="balance.png" class="theme-icon" id="dark" onclick="darkmode()" />
+        <img src="white-balance.png" class="theme-icon" id="light" onclick="lightmode()" />
+        <h1> Light And Dark Mode Theme Changer</h1>
+        <h2>...Full moon...</h2>
+        <p>
+            The full moon is the lunar phase when the Moon appears fully illuminated from Earth's perspective. This
+            occurs when Earth is located between the Sun and the Moon. This means that the lunar hemisphere facing
+            Earth—the near side—is completely sunlit and appears as an approximately circular disk.
+        </p>
+        <h2>...Half Moon...</h2>
+        <p>
+            The third quarter is commonly known as the half moon. When the opposite half of the moon is illuminated it
+            is known as the third quarter. It appears after waning gibbous and before the waning crescent..
+        </p>
+        <img src="full.jpg" height="350" width="350">
+        <img src="half.jpg"height="350" width="350">
+
+    </div>
+
+
+    <script>
+        function darkmode() {
+            const imgDark = document.getElementById("dark");
+            imgDark.classList.add("active");
+
+            const imgLight = document.getElementById("light");
+            imgLight.classList.remove("active");
+
+            const bodyElement = document.getElementById("body");
+            bodyElement.className = "theme-dark";
+        }
+        function lightmode() {
+            const imgDark = document.getElementById("dark");
+            imgDark.classList.remove("active");
+
+            const imgLight = document.getElementById("light");
+            imgLight.classList.add("active");
+
+            const bodyElement = document.getElementById("body");
+            bodyElement.className = "theme-light";
+        }
+    </script>
+</body>
+
+</html>
